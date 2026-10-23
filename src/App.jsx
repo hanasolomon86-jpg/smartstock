@@ -9,14 +9,25 @@ function App() {
     return savedProducts ? JSON.parse(savedProducts) : inventoryData;
   });
 
+  // שמירה אוטומטית ב-localStorage
   useEffect(() => {
     localStorage.setItem("smartstock_products", JSON.stringify(products));
   }, [products]);
 
-  // פונקציה שמייצרת ID סדרתי למוצר החדש
+  // חוק אוטומטי: בדיקת מלאי והדפסת לוג מערכת בעת חוסר מלאי
+  useEffect(() => {
+    products.forEach((product) => {
+      if (product.stock < product.minStockLevel) {
+        console.warn(
+          `[התרעת מערכת - חוסר מלאי]: המוצר "${product.name}" (מקט: ${product.id}) נמצא מתחת לסף המינימום! כמו נוכחית: ${product.stock}, סף מינימום: ${product.minStockLevel}`,
+        );
+      }
+    });
+  }, [products]);
+
+  // פונקציה להוספת מוצר חדש עם ID סדרתי
   const handleAddProduct = (productData) => {
     const nextIdNum = products.length + 1;
-    // יוצר פורמט כמו prod-005, prod-006 וכו'
     const formattedId = `prod-${String(nextIdNum).padStart(3, "0")}`;
 
     const newProduct = {
@@ -37,7 +48,9 @@ function App() {
       }}
     >
       <h1>ניהול מלאי - SmartStock</h1>
+
       <AddProductForm onAddProduct={handleAddProduct} />
+
       <InventoryTable products={products} />
     </div>
   );
