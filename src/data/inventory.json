@@ -1,0 +1,30 @@
+[
+    {
+        "id": "prod-001",
+        "name": "חלב תנובה 3%",
+        "stock": 17,
+        "minStockLevel": 5,
+        "price": 7.90
+    },
+    {
+        "id": "prod-002",
+        "name": "לחם פרוס אחיד",
+        "stock": 15,
+        "minStockLevel": 5,
+        "price": 6.50
+    },
+    {
+        "id": "prod-003",
+        "name": "תבנית ביצים L",
+        "stock": 9,
+        "minStockLevel": 5,
+        "price": 32.00
+    },
+    {
+        "id": "prod-004",
+        "name": "גבינה צהובה עמק",
+        "stock": 12,
+        "minStockLevel": 4,
+        "price": 29.90
+    }
+]

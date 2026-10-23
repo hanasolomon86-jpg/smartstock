@@ -1,1 +1,1 @@
-# SmartStock- Smart Inventory Management & Automation System
+# SmartStock - Smart Inventory Management & Automation System
