@@ -10,7 +10,7 @@ export default function InventoryTable({ products }) {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <h2>ניהול מלאי - SmartStock</h2>
+      <h2> מלאי - SmartStock</h2>
       <table
         border="1"
         cellPadding="12"
