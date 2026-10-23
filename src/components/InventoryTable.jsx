@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-// ייבוא קובץ הנתונים שיצרנו בתיקיית data
-import inventoryData from "../data/inventory.json";
-
-export default function InventoryTable() {
-  // הגדרת הנתונים ההתחלתיים מתוך קובץ ה-JSON
-  const [products, setProducts] = useState(inventoryData);
+export default function InventoryTable({ products }) {
+  // משתמשת ישירות ב-products שמגיע מלמעלה מבלי ליצור useState משל עצמך
 
   return (
     <div
